@@ -37,3 +37,22 @@
 - Сервер генерит только HTML и ничего не знает про JS, поэтому мы должны генерить разные бандлы: один для сервера, другой для клиента. Создаем разные Webpack конфигурации.
 - Точки входа для сервера и клиента должны различаться.
 - Используем `const nodeExternals = require('webpack-node-externals');`, чтобы сократить размер серверного бандла.
+
+API http://react-ssr-api.herokuapp.com/
+
+
+Общая схема запросов к API:
+
+![](./docs/images/proxy-request.png)
+
+Первоначальный запрос к API:
+
+![](./docs/images/initial-request-to-api.png)
+
+Последующие запросы к API:
+
+![](./docs/images/followup-requests.png)
+
+API Docs:
+
+![](./docs/images/api.png)

@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import { fetchUsers } from '../actions';
+import { Helmet } from 'react-helmet';
 
 class UsersListPage extends Component {
     componentDidMount() {
@@ -13,9 +14,20 @@ class UsersListPage extends Component {
         });
     }
 
+    head() {
+        return (
+          <Helmet>
+            <title>{`${this.props.users.length} Users Loaded`}</title>
+            <meta property="og:title" content="Users App" />
+          </Helmet>
+        );
+    }
+
     render() {
         return (
-            <div>
+            <div className="center-align" style={{ marginTop: '200px'}}>
+                {this.head()}
+                <h3>List of users</h3>
                 <ul>
                     {this.renderUsers()}
                 </ul>
@@ -35,5 +47,5 @@ function loadData(store) {
 
 export default {
     loadData,
-    component: connect(mapStateToProps, {fetchUsers})(UsersListPage)
+    component: connect(mapStateToProps, { fetchUsers })(UsersListPage)
 }
