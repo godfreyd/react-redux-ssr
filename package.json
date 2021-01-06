@@ -20,7 +20,7 @@
     "@bem-react/core": "^2.0.9",
     "@bem-react/di": "^2.2.4",
     "@types/react": "^16.9.34",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-loader": "8.1.0",
     "compression": "1.7.4",
     "concurrently": "5.1.0",
